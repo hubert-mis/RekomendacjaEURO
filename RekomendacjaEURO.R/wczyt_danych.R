@@ -1,28 +1,38 @@
-inflation <- read.csv("U:/Informatyka Ekonomiczna/Projekt/inflacja_s.csv")
-inflation <- inflation[-(3:5)]
-colnames(inflation)[2] <- "Inflation Rate"
+script.dir <- dirname(sys.frame(1)$ofile)
+setwd(script.dir)
 
-unemployment <- read.csv("U:/Informatyka Ekonomiczna/Projekt/bezrobocie.csv")
-unemployment <- unemployment[-(3:5)]
-colnames(unemployment)[2] <- "Unemployment Rate"
+#GDP Poland
+url <- "https://stooq.pl/q/d/l/?s=gdpypl.m&i=d"
+destfile <- "gdp_pl.csv"
+tryCatch(download.file(url, destfile, mode="wb"),
+         error = function(e){
+           warning("Couldn't download the newest version of GDP historical values. Loading the existing one..")
+         })
+gdp_pl_data <- read.csv("gdp_pl.csv", header = TRUE, sep = ",", dec = ".")
 
-gdp <- read.csv("U:/Informatyka Ekonomiczna/Projekt/pkb.csv")
-gdp <- gdp[-(3:5)]
-colnames(gdp)[2] <- "Gross Domestic Product"
+#Unemployment Poland
+url <- "https://stooq.pl/q/d/l/?s=unrtpl.m&i=q"
+destfile <- "unempl_pl.csv"
+tryCatch(download.file(url, destfile, mode="wb"),
+         error = function(e){
+           warning("Couldn't download the newest version of unemployment historical values. Loading the existing one..")
+         })
+unempl_pl_data <- read.csv("unempl_pl.csv", header = TRUE, sep = ",", dec = ".")
 
+#Inflation Poland
+url <- "https://stooq.pl/q/d/l/?s=cpiypl.m&i=q"
+destfile <- "infl_pl.csv"
+tryCatch(download.file(url, destfile, mode="wb"),
+         error = function(e){
+           warning("Couldn't download the newest version of inflation historical values. Loading the existing one..")
+         })
+infl_pl_data <- read.csv("infl_pl.csv", header = TRUE, sep = ",", dec = ".")
 
-################## 
-library(RJSONIO)
-library(WDI)
-
-WDI(country = "PL", indicator = "NY.GDP.MKTP.CD", end = 2018, start = 2010)
-
-library(OECD)
-
-dataset <- "DP_LIVE"
-datastruc <- get_data_structure(dataset)
-str(a2, max.level = 1)
-datastruc$TIME
-
-
-temp <- get_dataset(dataset = dataset, filter = list(c("POL", "EA19"), c("CPI"), c("TOT")))
+#Historical rates EUR/PLN
+url <- "https://stooq.pl/q/d/l/?s=eurpln&i=d"
+destfile <- "euro_pl.csv"
+tryCatch(download.file(url, destfile, mode="wb"),
+         error = function(e){
+           warning("Couldn't download the newest version of EUR/PLN rates historical values. Loading the existing one..")
+         })
+euro_pl_data <- read.csv("euro_pl.csv", header = TRUE, sep = ",", dec = ".")
