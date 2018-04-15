@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RekomendacjaEURO", "Rekomen
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RekomendacjaEURO.Tests", "RekomendacjaEURO.Tests\RekomendacjaEURO.Tests.csproj", "{61B39858-422F-4605-9C25-C2CC6043F958}"
 EndProject
+Project("{DA7A21FA-8162-4350-AD77-A8D1B671F3ED}") = "RekomendacjaEURO.R", "RekomendacjaEURO.R\RekomendacjaEURO.R.rxproj", "{A68ADBED-1A6A-46A3-A38C-BE492085FA58}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RekomendacjaEURO.BL", "RekomendacjaEURO.BL\RekomendacjaEURO.BL.csproj", "{CBF88486-7F9F-4345-94D7-AD5C111B599A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{61B39858-422F-4605-9C25-C2CC6043F958}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{61B39858-422F-4605-9C25-C2CC6043F958}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{61B39858-422F-4605-9C25-C2CC6043F958}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A68ADBED-1A6A-46A3-A38C-BE492085FA58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A68ADBED-1A6A-46A3-A38C-BE492085FA58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A68ADBED-1A6A-46A3-A38C-BE492085FA58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A68ADBED-1A6A-46A3-A38C-BE492085FA58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBF88486-7F9F-4345-94D7-AD5C111B599A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBF88486-7F9F-4345-94D7-AD5C111B599A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBF88486-7F9F-4345-94D7-AD5C111B599A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBF88486-7F9F-4345-94D7-AD5C111B599A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
